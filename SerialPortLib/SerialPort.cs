@@ -239,6 +239,20 @@ namespace SerialPortLib
             return success;
         }
 
+        /// <summary>
+        /// Is the port ready for read or write
+        /// </summary>
+        /// <remarks>
+        /// Implemented using <see cref="https://docs.microsoft.com/en-us/dotnet/api/system.io.ports.serialport.dsrholding"/>
+        /// </remarks>
+        public bool IsReady
+        {
+            get
+            {
+                return _serialPort.DsrHolding;
+            }
+        }
+
         #endregion
 
         #region Private members
